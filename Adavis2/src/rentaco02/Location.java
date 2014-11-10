@@ -1,5 +1,6 @@
 package rentaco02;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /** Représenter une location
@@ -83,6 +84,20 @@ public class Location {
 	 */
 	public void setDateEnreg(GregorianCalendar dateEnreg) {
 		this.dateEnreg = dateEnreg;
+	}
+	
+	public int getHeureEnreg(){
+		int heure = this.dateEnreg.get(Calendar.HOUR) ;
+		if(this.dateEnreg.get(Calendar.AM_PM) == Calendar.PM){
+			heure += 12 ;
+		}
+		return heure ;
+		
+		
+	}
+	public int getMinuteEnreg(){
+		int minute = this.dateEnreg.get(Calendar.MINUTE) ;
+		return minute ;
 	}
 
 	/** Obtenir la date de départ
